@@ -36,7 +36,7 @@ class App extends Component{
     const year = time.getFullYear();
     const month = (time.getMonth()+1).toString.length === 1 ? ('0' + (time.getMonth()+1)) : (time.getMonth()+1);
     const date =  time.getDate().toString.length === 1 ? ('0' + time.getDate()) : (time.getMonth()+1);
-    const todo_Date = year + '/' + month + '/' + date + ' - ' + time.getHours() + ':' + time.getMinutes();
+    const todo_Date = year + '/' + month + '/' + date + ' ' + time.getHours() + ':' + time.getMinutes();
     
     const _todo = {todo : todo, date : todo_Date};
     let _temp = [...this.state.todo_list];
