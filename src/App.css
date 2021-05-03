@@ -54,7 +54,7 @@ header>h1{
 	padding: 20px;
 }
 
-.todo_txt{
+.todo_input_txt{
 	position: absolute;
 	top: 50%;
 	left: 20px;
@@ -138,9 +138,19 @@ header>h1{
 }
 
 .list>li>span{
-	font-size: 1.12em;
 	font-family: 'Noto Sans KR', sans-serif;
 	color: #393e46;
+}
+
+.list>li>.todo_txt{
+	font-size: 1.12em;
+}
+
+.list>li>.date_txt{
+	position: absolute;
+	bottom: 5px; right: 5px;
+	font-size: 0.7em;
+
 }
 
 .list>li:first-child{
