@@ -58,7 +58,6 @@ class App extends Component{
   }
 }
 
-
 class Todo_Add extends Component{		
   constructor(props){
     super(props)
@@ -151,25 +150,4 @@ chk_todo_childEle = (e) =>{
 }
 
 
-export default App;
-
-
-
-  /*
-    let list = [];
-    let data = this.props.todo;
-    
-    for(let i = 0 ; i < data.length ; i++){
-      list.push(<li key={data[i].date}><span>{data[i].todo}</span></li>);
-    }
-  */
-
-
-/*
-
-
-  this.inputHandler = this.inputHandler.bind(this);
-inputHandler(e){ 
-  this.setState({ [e.target.name] : e.target.value});
-}
-*/
+export default App; 
