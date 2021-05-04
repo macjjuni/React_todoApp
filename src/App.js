@@ -134,7 +134,7 @@ chk_todo_childEle = (e) =>{
   let getData = this.props.todo;
   
   for(let i=0 ; i < getData.length ; i++){
-    list.push(<li key={getData[i] + i} onClick={this.check_todo}><span onClick={this.chk_todo_childEle} className="todo_txt">{getData[i].todo}</span>
+    list.push(<li key={i} onClick={this.check_todo}><span onClick={this.chk_todo_childEle} className="todo_txt">{getData[i].todo}</span>
     <span onClick={this.chk_todo_childEle} className="date_txt">{getData[i].date}</span></li>)
   }
   
