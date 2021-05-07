@@ -8,8 +8,6 @@ class Todo_Add extends Component{
             todo : ''
         }
 
-        this.input_onChange = this.input_onChange.bind(this);
-        this.insert_todo = this.insert_todo.bind(this);
     }
 
     insert_todo = e =>{
@@ -23,7 +21,7 @@ class Todo_Add extends Component{
         }
     }
 
-    input_onChange = e =>{
+    input_onChange = e =>{ 
         this.setState({todo : e.target.value})
     }
 
