@@ -175,11 +175,11 @@ header{
 }
 
 .list>li:hover{
-	background-color: #eeeeee;
+	background-color: #faf7ff;
 }
 
 .list>.done{
-	background-color: #faf7ff;
+	background-color: #eeeeee;
 }
 
 .list>.done .todo_txt{
@@ -232,7 +232,7 @@ header{
 	position: absolute;
 	bottom: 3px; right: 5px;
 	font-size: 0.25em;
-	transition: 0.23s;
+	transition: 0.18s;
 }
 
 .list>li:hover .date_txt{

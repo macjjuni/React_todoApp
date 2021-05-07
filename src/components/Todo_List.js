@@ -6,7 +6,6 @@ class Todo_List extends Component{
     constructor(props){
         super(props);
 
-        this.del_todo = this.del_todo.bind(this);
     }
 
     check_todo = e =>{
@@ -45,15 +44,33 @@ class Todo_List extends Component{
 
         const _target = e.target;
         const len = _target.parentNode.parentNode.childElementCount;
-        
-        for(let i=0 ; i<len ; i++){
-            if(_target.parentNode.parentNode.children[i].children[0].textContent ===
-                _target.parentNode.children[0].textContent){
-         
-                    this.props.del_todo(i) // 부모 컴포넌트에게 지울 todo의 index값 전송 
+
+        for(let l=0 ; l<len ; l++){
+            if(_target.parentNode.parentNode.children[l] ===
+                _target.parentNode){
+
+                   this.props.del_todo(l) // 부모 컴포넌트에게 지울 todo의 index값 전송 
                     
                 }
         }
+    }
+
+    done_todo = e =>{
+        
+        const _target = e.target;
+        const len = _target.parentNode.childElementCount;
+
+        if( _target.tagName === 'LI'){
+        
+            for(let k=0 ; k<len ; k++){
+                if(_target.parentNode.children[k] ===
+                    _target){
+    
+                       this.props.done_todo(k) // 부모 컴포넌트에게 지울 todo의 index값 전송 
+                        
+                    }
+            }
+        }    
     }
     
     render(){
@@ -62,9 +79,11 @@ class Todo_List extends Component{
         let getData = this.props.todo;
 
         for(let i=0 ; i < getData.length ; i++){
-        
+           
+            const done = getData[i].done === 1 ? 'done' : '';
+            
             list.push(
-                <li key={i} ref={this.list_li} onClick={this.check_todo} >
+                <li key={i} ref={this.list_li} onClick={this.done_todo} className={done}>
                     <span onClick={this.chk_todo_childEle} className="todo_txt">{getData[i].todo}</span>
                     <span onClick={this.chk_todo_childEle} className="date_txt">{getData[i].date}</span>
                     <span className="rename_btn"></span>
