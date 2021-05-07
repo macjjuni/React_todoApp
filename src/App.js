@@ -34,7 +34,7 @@ class App extends Component{
     }    
     this.insert_todo = this.insert_todo.bind(this);
     this.delete_todo = this.delete_todo.bind(this);
-    this.done_todo = this.done_todo.bind(this);
+    this.done_todo = this.done_todo.bind(this); 
   }
 
   insert_todo(todo) { //todo 추가
