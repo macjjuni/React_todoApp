@@ -6,8 +6,6 @@ class Todo_List extends Component{
     constructor(props){
         super(props);
 
-        this.show_btn = this.show_btn.bind(this);
-        this.hide_btn = this.hide_btn.bind(this);
         this.del_todo = this.del_todo.bind(this);
     }
 
@@ -43,20 +41,6 @@ class Todo_List extends Component{
         }
     }
 
-    show_btn = e =>{
-        const list = e.target.parentNode; 
-        const len = list.childElementCount;
-
-        for(let i = 0 ; i<len ; i++){
-            list.children[i].classList.remove('show')
-        }
-        e.target.classList.add('show');
-    }
-
-    hide_btn = e =>{
-        e.target.classList.remove('show');        
-    }
-
     del_todo = e =>{
 
         const _target = e.target;
@@ -80,7 +64,7 @@ class Todo_List extends Component{
         for(let i=0 ; i < getData.length ; i++){
         
             list.push(
-                <li key={i} ref={this.list_li} onClick={this.check_todo} onMouseEnter={this.show_btn} onMouseLeave={this.hide_btn}>
+                <li key={i} ref={this.list_li} onClick={this.check_todo} >
                     <span onClick={this.chk_todo_childEle} className="todo_txt">{getData[i].todo}</span>
                     <span onClick={this.chk_todo_childEle} className="date_txt">{getData[i].date}</span>
                     <span className="rename_btn"></span>
