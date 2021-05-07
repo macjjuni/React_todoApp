@@ -191,14 +191,6 @@ header{
 	color: #393e46;
 }
 
-.show>.rename_btn{
-	opacity: 1;
-}
-
-.show>.delete_btn{
-	opacity: 1;
-}
-
 .rename_btn{
 	position: absolute;
 	top: 50%;
@@ -228,6 +220,14 @@ header{
 	line-height: 1em;
 }
 
+.list>li:hover .rename_btn{
+	opacity: 1;
+}
+
+.list>li:hover .delete_btn{
+	opacity: 1;
+}
+
 .list>li>.date_txt{
 	position: absolute;
 	bottom: 3px; right: 5px;
@@ -235,7 +235,7 @@ header{
 	transition: 0.23s;
 }
 
-.list>.show>.date_txt{
+.list>li:hover .date_txt{
 	opacity: 0;
 }
 
