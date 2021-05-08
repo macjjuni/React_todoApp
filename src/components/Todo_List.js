@@ -82,9 +82,8 @@ class Todo_List extends Component{
 		const _target = e.target.parentNode;
 		const len = _target.parentNode.childElementCount;
 		//텍스트박스 표시
-		
-				
-		for(let m = 0 ; m < len ; m++){
+
+        for(let m = 0 ; m < len ; m++){ //클릭한 todo를 제외한 나머지 수정상태 제거
 			if(_target.parentNode.children[m] ===
 				_target){
 
@@ -94,22 +93,19 @@ class Todo_List extends Component{
 				_target.children[0].value = this.props.todo[m].todo;
 
 			}else{
-                _target.parentNode.children[m].classList.remove('edit')
+                _target.parentNode.children[m].classList.remove('edit');
             }
 		}
-		
-			// <li>태그 클래스 변경
-		if(_target.classList.contains('ing') || _target.classList.contains('done')){
-			
+        console.log(_target)
+        if( !_target.classList.contains('edit')){ //수정상태가 아닐때
+			console.log('hello')
 			this.setState({
 				class : _target.className
 			})
-
-			_target.classList.add('edit');
-			
+            _target.classList.add('edit');			
+		
 		}else{
-			//내용 변경 함수
-				if(this.state.txt !== ''){ //내용 변경이 안됬을때 구분해서 내용 실행x
+				if(this.state.txt !== ''){ //내용 변경이 안됬을때 구분해서 todo 업데이트 실행x
 					this.props.update_todo(this.state.index, this.state.txt);
 					this.setState({
 					txt : ''
@@ -118,6 +114,13 @@ class Todo_List extends Component{
 			_target.classList.remove('edit')
 			_target.children[0].value = '';
 		}
+		
+		
+		
+		
+			// <li>태그 클래스 변경
+		
+
 	}
 	
 	edit_onChange = e =>{ 
