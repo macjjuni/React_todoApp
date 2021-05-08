@@ -93,7 +93,9 @@ class Todo_List extends Component{
 				})
 				_target.children[0].value = this.props.todo[m].todo;
 
-			}
+			}else{
+                _target.parentNode.children[m].classList.remove('edit')
+            }
 		}
 		
 			// <li>태그 클래스 변경
@@ -103,8 +105,7 @@ class Todo_List extends Component{
 				class : _target.className
 			})
 
-			_target.classList.replace('ing', 'edit');
-			_target.classList.replace('done', 'edit');
+			_target.classList.add('edit');
 			
 		}else{
 			//내용 변경 함수
@@ -114,7 +115,7 @@ class Todo_List extends Component{
 					txt : ''
 				})
 			}
-			_target.classList.replace('edit', this.state.class);
+			_target.classList.remove('edit')
 			_target.children[0].value = '';
 		}
 	}
