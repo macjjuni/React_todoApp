@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 
 
 class Todo_List extends Component{
-
-    constructor(props){
-        super(props);
+	 constructor(props){
+        super(props)
+        this.state = {
+            class : '',
+			index : 0,
+			txt : ''
+        }
 
     }
 
@@ -72,6 +76,60 @@ class Todo_List extends Component{
             }
         }    
     }
+	
+	edit_todo = e =>{
+		
+		const _target = e.target.parentNode;
+		const len = _target.parentNode.childElementCount;
+		//텍스트박스 표시
+		
+				
+		for(let m = 0 ; m < len ; m++){
+			if(_target.parentNode.children[m] ===
+				_target){
+
+				this.setState({
+					index : m
+				})
+				_target.children[0].value = this.props.todo[m].todo;
+
+			}
+		}
+		
+			// <li>태그 클래스 변경
+		if(_target.classList.contains('ing') || _target.classList.contains('done')){
+			
+			this.setState({
+				class : _target.className
+			})
+
+			_target.classList.replace('ing', 'edit');
+			_target.classList.replace('done', 'edit');
+			
+		}else{
+			//내용 변경 함수
+				if(this.state.txt !== ''){ //내용 변경이 안됬을때 구분해서 내용 실행x
+					this.props.update_todo(this.state.index, this.state.txt);
+					this.setState({
+					txt : ''
+				})
+			}
+			_target.classList.replace('edit', this.state.class);
+			_target.children[0].value = '';
+		}
+	}
+	
+	edit_onChange = e =>{ 
+        this.setState({txt : e.target.value})
+    }
+	
+	enter_keydown = e =>{
+		if(e.keyCode === 13){
+
+			this.props.update_todo(this.state.index, this.state.txt);
+			e.target.parentNode.classList.replace('edit', this.state.class);
+		}
+	}
     
     render(){
         
@@ -79,14 +137,15 @@ class Todo_List extends Component{
         let getData = this.props.todo;
 
         for(let i=0 ; i < getData.length ; i++){
-           
-            const done = getData[i].done === 1 ? 'done' : '';
+
+            const done = getData[i].done === 1 ? 'done' : 'ing';
             
             list.push(
                 <li key={i} ref={this.list_li} onClick={this.done_todo} className={done}>
+					<input type="text" className={'edit_txt'} onChange={this.edit_onChange}  onKeyDown={this.enter_keydown}/>
                     <span onClick={this.chk_todo_childEle} className="todo_txt">{getData[i].todo}</span>
                     <span onClick={this.chk_todo_childEle} className="date_txt">{getData[i].date}</span>
-                    <span className="rename_btn"></span>
+                    <span className="edit_btn" onClick={this.edit_todo}></span>
                     <span className="delete_btn" onClick={this.del_todo}></span>
                 </li>
             )
@@ -100,7 +159,7 @@ class Todo_List extends Component{
                 </ul>
             </div>     
         );
-        }
     }
+}
 
 export default Todo_List;

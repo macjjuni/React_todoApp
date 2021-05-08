@@ -191,14 +191,36 @@ header{
 	color: #393e46;
 }
 
-.rename_btn{
+.edit_txt{
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 40px;
+	transform: translate(0 , -50%);
+	width: 65%;
+	height: 25px;
+	padding: 2px 5px;
+	outline: 0;
+	border-radius: 3px;
+	border: 1px solid #bbbbbb;
+	outline: 0;
+	font-size: 0.8em;
+}
+
+
+.list>.edit>.edit_txt{
+	display: block;
+}
+
+
+.edit_btn{
 	position: absolute;
 	top: 50%;
 	right: 45px;
 	transform: translate(0, -50%);
-	width: 25px;
-	height: 25px;
-	background: url("./image/edit.png") no-repeat center/90%;
+	width: 33px;
+	height: 33px;
+	background: url("./image/edit.png") no-repeat center/70%;
 	transition: 0.2s;
 	opacity: 0;
 }
@@ -208,11 +230,14 @@ header{
 	top: 50%;
 	right: 12px;
 	transform: translate(0, -50%);
-	width: 25px;
-	height: 25px;
-	background: url("./image/delete.png")  no-repeat center/95%;;
+	width: 33px;
+	height: 33px;
+	background: url("./image/delete.png")  no-repeat center/75%;;
 	transition: 0.2s;
 	opacity: 0;
+}
+.edit:hover .delete_btn{
+	display: none;
 }
 
 .list>li>.todo_txt{
@@ -220,7 +245,7 @@ header{
 	line-height: 1em;
 }
 
-.list>li:hover .rename_btn{
+.list>li:hover .edit_btn{
 	opacity: 1;
 }
 

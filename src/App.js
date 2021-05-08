@@ -35,6 +35,7 @@ class App extends Component{
     this.insert_todo = this.insert_todo.bind(this);
     this.delete_todo = this.delete_todo.bind(this);
     this.done_todo = this.done_todo.bind(this); 
+	this.update_todo = this.update_todo.bind(this);
   }
 
   insert_todo(todo) { //todo 추가
@@ -79,13 +80,24 @@ class App extends Component{
     })
 
   }
+		
+  update_todo(todo_index, txt){
+	  
+	  let _temp = [...this.state.todo_list];
+		
+	  _temp[todo_index].todo = txt; 
+	  this.setState({
+        todo_list : [..._temp]
+      })	  
+	  
+  }
 
   render(){
 
     return(
       <main>
-        <Todo_Add onSubmit={this.insert_todo}/>
-        <Todo_List todo={this.state.todo_list} del_todo={this.delete_todo} done_todo={this.done_todo}/>
+			<Todo_Add onSubmit={this.insert_todo}></Todo_Add>
+			<Todo_List todo={this.state.todo_list} del_todo={this.delete_todo} done_todo={this.done_todo} update_todo={this.update_todo}></Todo_List>
       </main>
     );
   }
