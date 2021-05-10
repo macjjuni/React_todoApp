@@ -98,7 +98,7 @@ class Todo_List extends Component{
 		}
         console.log(_target)
         if( !_target.classList.contains('edit')){ //수정상태가 아닐때
-			console.log('hello')
+
 			this.setState({
 				class : _target.className
 			})
@@ -106,6 +106,7 @@ class Todo_List extends Component{
 		
 		}else{
 				if(this.state.txt !== ''){ //내용 변경이 안됬을때 구분해서 todo 업데이트 실행x
+
 					this.props.update_todo(this.state.index, this.state.txt);
 					this.setState({
 					txt : ''
@@ -130,7 +131,11 @@ class Todo_List extends Component{
 	enter_keydown = e =>{
 		if(e.keyCode === 13){
 
-			this.props.update_todo(this.state.index, this.state.txt);
+            if(this.state.txt !== ''){ //내용 변경이 안됬을때 구분해서 todo 업데이트 실행x
+			    
+                this.props.update_todo(this.state.index, this.state.txt);
+            
+            }
 			e.target.parentNode.classList.replace('edit', this.state.class);
 		}
 	}
