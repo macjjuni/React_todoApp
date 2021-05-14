@@ -1,5 +1,7 @@
 # Todo App(Responsive)
 
+* Todo Web Application made with React
+* 
 ## [링크](https://www.juni-official.com/todo)
 
 ### Screen
