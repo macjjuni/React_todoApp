@@ -50,7 +50,7 @@ header{
 	position: relative;
 	height: 50px;
 	text-align: center;
-	padding: 12px;
+	
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	background: #f4eeff;
@@ -58,13 +58,18 @@ header{
 
 .title{
 	position: relative;
-	font-size: 1.4em;
+	font-size: 25px;
+	line-height: 50px;
 	font-weight: 600;
 	color: #403f48;
 }
 
 .title span{
 	vertical-align: middle;
+	font-family: serif"Roboto Condensed" italic;
+	font-size: pxpx;
+	font-weight: bold;
+	font-style: italic;
 }
 
 .logo{
@@ -316,7 +321,7 @@ header{
 		font-size: 1.5em;
 		font-weight: 600;
 		color: #403f48;
-	}	
+	}
 	
 	.todo_add_wrap{
 		position: relative;
