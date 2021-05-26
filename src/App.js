@@ -47,7 +47,7 @@ class App extends Component{
     const todo_Date = year + '/' + month + '/' + date + ' ' + time.getHours() + ':' + time.getMinutes();
     
     const _todo = {todo : todo, date : todo_Date, done : 0};
-    let _temp = [...this.state.todo_list];
+    const _temp = this.state.todo_list.concat();
     _temp.push(_todo);  
 
     this.setState({
@@ -57,7 +57,10 @@ class App extends Component{
 
   delete_todo(todo_index){ //todo 삭제
     
-    let _temp = [...this.state.todo_list];
+    //let _temp = [...this.state.todo_list];
+    //const _temp = [].concat(this.state.todo_list);
+    const _temp = this.state.todo_list.concat();
+    
     _temp.splice(todo_index, 1);
 
       this.setState({
@@ -83,7 +86,7 @@ class App extends Component{
 		
   update_todo(todo_index, txt){
 	  
-	  let _temp = [...this.state.todo_list];
+	  const _temp = this.state.todo_list.concat();
 		
 	  _temp[todo_index].todo = txt; 
 	  this.setState({
