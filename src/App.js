@@ -103,6 +103,7 @@ class App extends Component{
     this.setState({
       todo_list : [..._temp]
     })
+    localStorage.setItem('todo', JSON.stringify(_temp));
 
   }
 		
