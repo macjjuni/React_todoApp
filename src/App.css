@@ -50,7 +50,6 @@ header{
 	position: relative;
 	height: 50px;
 	text-align: center;
-	
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	background: #f4eeff;
@@ -58,18 +57,15 @@ header{
 	
 .title{
 	position: relative;
-	font-size: 25px;
 	line-height: 50px;
-	font-weight: 600;
 	color: #403f48;
 }
 
 .title span{
 	vertical-align: middle;
 	font-family: serif"Roboto Condensed" italic;
-	font-size: pxpx;
+	font-size: 20px;
 	font-weight: bold;
-	font-style: italic;
 }
 
 .logo{
@@ -316,10 +312,7 @@ header{
 	}
 	
 	.title{
-		position: relative;
-		font-size: 25px;
 		line-height: 60px;
-		font-weight: 600;
 		color: #403f48;
 	}
 	
@@ -448,13 +441,12 @@ header{
 	}
 	
 	.title{
-		position: relative;
-		font-size: 25px;
 		line-height: 60px;
-		font-weight: 600;
-		color: #403f48;
 	}
-
+	.title span{
+		vertical-align: middle;
+		font-size: 20px;
+	}
 
 	.Todo{
 		position: relative;
@@ -473,7 +465,7 @@ header{
 	.todo_add_wrap{
 		position: relative;
 		width: 100%;
-		height: 15vh;
+		height: 10vh;
 		padding: 20px;
 	}
 
@@ -526,21 +518,17 @@ header{
 @media screen and (max-width: 320px){
 	header{
 		position: relative;
-		height: 50px;
-		text-align: center;
-		padding: 11px;
+		height: 60px;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
-		background: #f4eeff;
 	}
-	
+
 	.title{
-		position: relative;
-		font-size: 1.4em;
-		font-weight: 600;
-		color: #403f48;
+		line-height: 60px;
 	}
-	
+	.title span{
+		font-size: 20px;
+	}
 
 	.Todo{
 		position: relative;
@@ -559,7 +547,7 @@ header{
 	.todo_add_wrap{
 		position: relative;
 		width: 100%;
-		height: 13vh;
+		height: 10vh;
 		padding: 20px;
 	}
 
