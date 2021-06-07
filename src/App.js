@@ -9,16 +9,16 @@ class App extends Component{
   constructor(props){
     super(props);
 
-    if(localStorage.key(0)){
+    if(localStorage.key(0)){ //LocalStorage 데이터 유무 확인
       const _temp = JSON.parse(localStorage.getItem(localStorage.key(0)));
 
       this.state = {
         todo_list:[ ..._temp]
       }
-    }else{
+    }else{ //LocalStorage 데이터 없을 때
       this.state = {
-        todo_list:[                   /*
-        {
+        todo_list:[                  
+        /*{
             todo : '씻기',
             date : '2021/04/30 - 13:11',
             done : 0
@@ -27,17 +27,7 @@ class App extends Component{
             todo : '책 읽기',
             date : '2021/04/21 - 15:47',
             done : 0
-          },
-          {
-            todo : '운동하기',
-            date : '2021/04/19 - 07:24',
-            done : 0
-          },
-          {
-            todo : '낮잠자기',
-            date : '2021/04/16 - 01:49',
-            done : 0
-      }                                 */                      
+          }*/                      
         ]
       }
     }
@@ -48,13 +38,14 @@ class App extends Component{
 	  this.update_todo = this.update_todo.bind(this);
   }
 
+
   insert_todo(todo) { //todo 추가
-    
-    const time = new Date()
+
+    const time = new Date() //날짜 시간 구하기
     const year = time.getFullYear();
     const month = (time.getMonth()+1).toString.length === 1 ? ('0' + (time.getMonth()+1)) : (time.getMonth()+1);
     const date =  time.getDate().toString.length === 1 ? ('0' + time.getDate()) : (time.getMonth()+1);
-    const todo_Date = year + '/' + month + '/' + date + ' ' + time.getHours() + ':' + time.getMinutes();
+    const todo_Date = year + '-' + month + '-' + date + ' / ' + time.getHours() + ':' + time.getMinutes();
     
     const _todo = {todo : todo, date : todo_Date, done : 0};
     const _temp = this.state.todo_list.concat();
@@ -65,20 +56,10 @@ class App extends Component{
     })
 
     localStorage.setItem('todo', JSON.stringify(_temp));
-    
-    /*
-    for(let i = 0 ; i < localStorage.length ; i++){
-      const todo = localStorage.getItem('todo' + i);
-      console.log(todo);
-    }  
-    */
-
   }
 
   delete_todo(todo_index){ //todo 삭제
     
-    //let _temp = [...this.state.todo_list];
-    //const _temp = [].concat(this.state.todo_list);
     const _temp = this.state.todo_list.concat();
     
     _temp.splice(todo_index, 1);
@@ -90,7 +71,7 @@ class App extends Component{
       localStorage.setItem('todo', JSON.stringify(_temp));
   }
 
-  done_todo(todo_index){
+  done_todo(todo_index){ // todo 완료 처리
     
     let _temp = [...this.state.todo_list];
 
@@ -107,15 +88,15 @@ class App extends Component{
 
   }
 		
-  update_todo(todo_index, txt){
-	  
-	  const _temp = this.state.todo_list.concat();
+  update_todo(todo_index, txt){  // todo 내용 업데이트
+
+    const _temp = this.state.todo_list.concat();
 		
-	  _temp[todo_index].todo = txt; 
-	  this.setState({
+    _temp[todo_index].todo = txt; 
+    this.setState({
         todo_list : [..._temp]
       })	  
-	  
+
     localStorage.setItem('todo', JSON.stringify(_temp));
   }
 
