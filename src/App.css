@@ -355,7 +355,7 @@ header{
 		border-radius: 3px;
 		border: 1px solid #bbbbbb;
 		outline: 0;
-		font-size: 0.9em;
+		font-size: 15px;
 	}
 
 	.add_btn{
@@ -406,14 +406,14 @@ header{
 	}
 
 	.list>li>.todo_txt{
-		font-size: 1.15em;
-		line-height: 1em;
+		font-size: 15px;
+		line-height: 15px;
 	}
 
 	.list>li>.date_txt{
 		position: absolute;
 		bottom: 3px; right: 11px;
-		font-size: 0.25em;
+		font-size: 10px;
 		white-space: nowrap;
 	}
 
@@ -424,7 +424,7 @@ header{
 		width: 65%;
 		height: 33px;
 		padding: 2px 7px;
-		font-size: 1.15em;
+		font-size: 15px;
 	}
 
 }

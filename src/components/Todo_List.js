@@ -96,7 +96,7 @@ class Todo_List extends Component{
                 _target.parentNode.children[m].classList.remove('edit');
             }
 		}
-        console.log(_target)
+
         if( !_target.classList.contains('edit')){ //수정상태가 아닐때
 
 			this.setState({
