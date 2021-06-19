@@ -24,7 +24,6 @@ class Todo_Add extends Component{
     input_onChange = e =>{ 
         this.setState({todo : e.target.value})
     }
-   
 
     render(){
 
