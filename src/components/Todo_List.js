@@ -115,13 +115,7 @@ class Todo_List extends Component{
 			_target.classList.remove('edit')
 			_target.children[0].value = '';
 		}
-		
-		
-		
-		
 			// <li>태그 클래스 변경
-		
-
 	}
 	
 	edit_onChange = e =>{ 

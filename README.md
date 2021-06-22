@@ -1,7 +1,7 @@
 # Todo App(Responsive)
 
-* Todo Web Application made with React
-
+* npx create-react-app 사용
+* Component Class 방식 사용
 
 ## --> [Link](https://www.juni-official.com/todo)
 

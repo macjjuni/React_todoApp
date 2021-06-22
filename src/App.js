@@ -8,7 +8,6 @@ class App extends Component{
 
   constructor(props){
     super(props);
-
     if(localStorage.key(0)){ //LocalStorage 데이터 유무 확인
       const _temp = JSON.parse(localStorage.getItem(localStorage.key(0)));
 
@@ -35,8 +34,21 @@ class App extends Component{
     this.insert_todo = this.insert_todo.bind(this);
     this.delete_todo = this.delete_todo.bind(this);
     this.done_todo = this.done_todo.bind(this); 
-	  this.update_todo = this.update_todo.bind(this);
+    this.update_todo = this.update_todo.bind(this);
+    
   }
+
+
+    // 리렌더링 후에 실행됨. 최초 렌더링시에는 실행X
+    // 이전 props를 비교하여 네트워크 요청을 보내는 작업에 적절한 위치
+    componentDidUpdate(preveProps, prevState){
+      
+      if(preveProps !== prevState){
+        localStorage.setItem('todo', JSON.stringify(this.state.todo_list));
+      }
+      
+  }
+
 
 
   insert_todo(todo) { //todo 추가
@@ -55,7 +67,7 @@ class App extends Component{
       todo_list : [..._temp]
     })
 
-    localStorage.setItem('todo', JSON.stringify(_temp));
+    //localStorage.setItem('todo', JSON.stringify(_temp));
   }
 
   delete_todo(todo_index){ //todo 삭제
@@ -84,7 +96,7 @@ class App extends Component{
     this.setState({
       todo_list : [..._temp]
     })
-    localStorage.setItem('todo', JSON.stringify(_temp));
+    //localStorage.setItem('todo', JSON.stringify(_temp));
 
   }
 		
@@ -97,7 +109,7 @@ class App extends Component{
         todo_list : [..._temp]
       })	  
 
-    localStorage.setItem('todo', JSON.stringify(_temp));
+    //localStorage.setItem('todo', JSON.stringify(_temp));
   }
 
   render(){
