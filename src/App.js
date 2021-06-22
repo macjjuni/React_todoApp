@@ -49,25 +49,21 @@ class App extends Component{
       
   }
 
-
-
   insert_todo(todo) { //todo 추가
 
     const time = new Date() //날짜 시간 구하기
     const year = time.getFullYear();
     const month = (time.getMonth()+1).toString.length === 1 ? ('0' + (time.getMonth()+1)) : (time.getMonth()+1);
-    const date =  time.getDate().toString.length === 1 ? ('0' + time.getDate()) : (time.getMonth()+1);
+    const date =  time.getDate();
     const todo_Date = year + '-' + month + '-' + date + ' / ' + time.getHours() + ':' + time.getMinutes();
-    
     const _todo = {todo : todo, date : todo_Date, done : 0};
+
     const _temp = this.state.todo_list.concat();
     _temp.push(_todo);  
 
     this.setState({
       todo_list : [..._temp]
     })
-
-    //localStorage.setItem('todo', JSON.stringify(_temp));
   }
 
   delete_todo(todo_index){ //todo 삭제
@@ -96,7 +92,6 @@ class App extends Component{
     this.setState({
       todo_list : [..._temp]
     })
-    //localStorage.setItem('todo', JSON.stringify(_temp));
 
   }
 		
@@ -109,7 +104,6 @@ class App extends Component{
         todo_list : [..._temp]
       })	  
 
-    //localStorage.setItem('todo', JSON.stringify(_temp));
   }
 
   render(){
