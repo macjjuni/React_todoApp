@@ -1,10 +1,8 @@
-# Todo App(Responsive)
+# Todo App(Used Class Components) --> [Link](https://www.juni-official.com/todo)
 
 * npx create-react-app 사용
 * Component Class 방식 사용
-
-## --> [Link](https://www.juni-official.com/todo)
-
+* 
 ### 리액트 훅을 사용한 Todo List --> [Link](https://github.com/junheeleeme/react_TodoApp_hooks)
 
 ### Initial Screen
