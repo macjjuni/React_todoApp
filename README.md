@@ -3,8 +3,11 @@
 * CRA 사용
 * Component Class 방식 사용
 
+<br>
 
-#### 리액트 훅을 사용한 Todo App --> [Github Repository](https://github.com/junheeleeme/react_TodoApp_hooks)
+### 리액트 훅을 사용한 Todo App --> [Github Repository](https://github.com/junheeleeme/react_TodoApp_hooks)
+
+<br>
 
 ## 스크린샷
 
