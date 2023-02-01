@@ -1,6 +1,6 @@
-# Todo App(Used Class Components) --> [Link](https://www.juni-official.com/todo)
+# Todo App(Class Components)
 
-* npx create-react-app 사용
+* CRA 사용
 * Component Class 방식 사용
 
 
