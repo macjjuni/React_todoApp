@@ -6,8 +6,7 @@
 
 #### 리액트 훅을 사용한 Todo List --> [Link](https://github.com/junheeleeme/react_TodoApp_hooks)
 
-
-## Initial Screen
+## 스크린샷
 
 ![todo_cover](https://user-images.githubusercontent.com/38034518/118227046-d4b1a880-b4c2-11eb-9d6a-506b546d055c.png)
 
